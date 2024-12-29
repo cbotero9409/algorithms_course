@@ -116,15 +116,16 @@ class LinkedList:
       self.head = current.next_node
     else:
       position = index
-      i = 1  
-
-      while position > 1 and current.next_node:
+      previous = None
+      i = 0
+      
+      while position > 0 and current.next_node:
         previous = current
         current = current.next_node
         position -= 1
         i += 1
 
-      if i == index:
+      if i == index and current:
         previous.next_node = current.next_node
 
     return self
