@@ -112,20 +112,21 @@ class LinkedList:
   
   def remove_at_index(self, index):
     current = self.head
+    if not current:
+      return self
+    
     if index == 0:
       self.head = current.next_node
     else:
-      position = index
+      position = 0
       previous = None
-      i = 0
-      
-      while position > 0 and current.next_node:
+
+      while index > position and current.next_node:
         previous = current
         current = current.next_node
-        position -= 1
-        i += 1
+        position += 1
 
-      if i == index and current:
+      if position == index and current:
         previous.next_node = current.next_node
 
     return self
