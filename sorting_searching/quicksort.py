@@ -21,11 +21,11 @@ def get_sublists(values, pivot):
   lesser = []
   greater = []
 
-  for i in range(0, len(values)):
-    if values[i] <= pivot:
-      lesser.append(values[i])
+  for value in values:
+    if value <= pivot:
+      lesser.append(value)
     else:
-      greater.append(values[i])
+      greater.append(value)
 
   return lesser, greater
 
